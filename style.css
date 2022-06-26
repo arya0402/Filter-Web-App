@@ -2,10 +2,6 @@ body {
     background-color: gray;
 }
 
-.btn-success:hover {
-    background-color: red;
-}
-
 h3 {
     font-size: 25px !important;
 }
