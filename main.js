@@ -8,13 +8,23 @@ function setup() {
     video = createCapture(VIDEO);
     video.size(300, 300);
     video.hide();
-    console.log("worked")
+
+    poseNet = ml5.poseNet(video, modelLoaded);
+    poseNet.on("pose", gotPoses);
 }
 
 function draw() {
-
+    image(video, 0, 0, 300, 300);
 }
 
 function take_snapshot() {
     save("Arya.png");
+}
+
+function modelLoaded() {
+    console.log("Model Loaded");
+}
+
+function gotPoses(results) {
+    console.log(results);
 }
