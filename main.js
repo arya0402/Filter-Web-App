@@ -1,3 +1,6 @@
+noseX = 0;
+noseY = 0;
+
 function preload() {
     img = loadImage("https://i.postimg.cc/PxFvYgkv/l1.png");
 }
