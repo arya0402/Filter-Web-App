@@ -1,5 +1,5 @@
-noseX = 0;
-noseY = 0;
+var noseX = 0;
+var noseY = 0;
 
 function preload() {
     img = loadImage("https://i.postimg.cc/PxFvYgkv/l1.png");
@@ -33,7 +33,7 @@ function gotPoses(results) {
     if(results.length > 0) {
         console.log(results);
         noseX = results[0].pose.nose.x - 13;
-        noseY =  results[0].pose.nose.y - 13;
+        noseY =  results[0].pose.nose.y - 40;
         console.log("nose x = " + noseX);
         console.log("nose y = " + noseY);
     }
