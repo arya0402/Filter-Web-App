@@ -1,5 +1,5 @@
 function preload() {
-
+    img = loadImage("https://i.postimg.cc/PxFvYgkv/l1.png");
 }
 
 function setup() {
@@ -15,6 +15,7 @@ function setup() {
 
 function draw() {
     image(video, 0, 0, 300, 300);
+    image(img, noseX, noseY, 30, 30);
 }
 
 function take_snapshot() {
@@ -26,5 +27,11 @@ function modelLoaded() {
 }
 
 function gotPoses(results) {
-    console.log(results);
+    if(results.length > 0) {
+        console.log(results);
+        noseX = results[0].pose.nose.x - 13;
+        noseY =  results[0].pose.nose.y - 13;
+        console.log("nose x = " + noseX);
+        console.log("nose y = " + noseY);
+    }
 }
